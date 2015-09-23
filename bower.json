@@ -1,0 +1,27 @@
+{
+  "name": "confirm-modal",
+  "version": "0.0.0",
+  "authors": [
+    "Christophe Gosiau <christophe.gosiau@tigron.be>"
+  ],
+  "description": "Confirmation modal for Bootstrap",
+  "main": "bootstrap.confirm-modal.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "bootstrap",
+    "modal",
+    "confirm",
+    "confirmation",
+    "alert"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
