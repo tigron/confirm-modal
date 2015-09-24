@@ -1,5 +1,5 @@
 {
-  "name": "confirm-modal",
+  "name": "tigron-confirm-modal",
   "version": "0.0.1",
   "authors": [
     "Christophe Gosiau <christophe.gosiau@tigron.be>"
@@ -14,7 +14,8 @@
     "modal",
     "confirm",
     "confirmation",
-    "alert"
+    "alert",
+    "tigron"
   ],
   "license": "MIT",
   "ignore": [
