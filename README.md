@@ -9,7 +9,7 @@ This small plugin can be used to create confirmation modals when clicking a link
 
 Installation with bower:
 
-  `bower install confirm-modal`
+  `bower install tigron-confirm-modal`
 
 include the following line in your project:
 
