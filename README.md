@@ -13,7 +13,7 @@ Installation with bower:
 
 include the following line in your project:
 
-  `<script src="/bower_components/confirm-modal/js/bootstrap.confirm-modal.js"></script>`
+  `<script src="/bower_components/tigron-confirm-modal/js/bootstrap.confirm-modal.js"></script>`
 
 Activate:
 
