@@ -1,10 +1,14 @@
 $(function ( $ ) {
+	var bootstrap_version = $.fn.collapse.Constructor.VERSION.charAt(0);
 
 	$.fn.confirmModal = function() {
-		$(this).unbind('click');		
+		$(this).unbind('click');
 		$(this).click(function(ev) {
-
-			template = '<div id="dataConfirmModal" class="modal fade" role="dialog" aria-labelledby="dataConfirmLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title">%%title%%</h4><button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button></div><div class="modal-body"><p>%%message%%</p></div><div class="modal-footer"><a class="btn btn-primary" href="%%btn_href%%" id="data-confirm-ok">%%btn_ok%%</a><a class="btn btn-default" data-dismiss="modal" aria-hidden="true" id="data-confirm-cancel">%%btn_cancel%%</a></div></div></div></div>';
+			if (bootstrap_version == '3') {
+				template = '<div id="dataConfirmModal" class="modal fade" role="dialog" aria-labelledby="dataConfirmLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title">%%title%%</h4><button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button></div><div class="modal-body"><p>%%message%%</p></div><div class="modal-footer"><a class="btn btn-primary" href="%%btn_href%%" id="data-confirm-ok">%%btn_ok%%</a><a class="btn btn-default" data-dismiss="modal" aria-hidden="true" id="data-confirm-cancel">%%btn_cancel%%</a></div></div></div></div>';
+			} else {
+				template = '<div id="dataConfirmModal" class="modal fade" role="dialog" aria-labelledby="dataConfirmLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title">%%title%%</h4><button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">x</button></div><div class="modal-body"><p>%%message%%</p></div><div class="modal-footer"><a class="btn btn-primary" href="%%btn_href%%" id="data-confirm-ok">%%btn_ok%%</a><a class="btn btn-default" data-dismiss="modal" aria-hidden="true" id="data-confirm-cancel">%%btn_cancel%%</a></div></div></div></div>';
+			}
 
 			var data = {'title': '', 'message': '', 'btn_ok': '', 'btn_href': '', 'btn_cancel': ''};
 			data.title = $(this).data('confirm-title');
@@ -15,7 +19,7 @@ $(function ( $ ) {
 
 			if (typeof data.title !== 'undefined') {
 				template = template.replace('%%title%%', data.title);
-	 		}
+			}
 			if (typeof data.message !== 'undefined') {
 				template = template.replace('%%message%%', data.message);
 			}
