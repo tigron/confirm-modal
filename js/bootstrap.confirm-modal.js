@@ -4,7 +4,9 @@ $(function ( $ ) {
 	$.fn.confirmModal = function() {
 		$(this).unbind('click');
 		$(this).click(function(ev) {
-			if (bootstrap_version == '3') {
+			if (bootstrap_version == '4') {
+				template = '<div id="dataConfirmModal" class="modal fade" role="dialog" aria-labelledby="dataConfirmLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title">%%title%%</h4><button type="button" class="close" data-dismiss="modal">x</button></div><div class="modal-body"><p>%%message%%</p></div><div class="modal-footer"><a class="btn btn-primary" href="%%btn_href%%" id="data-confirm-ok">%%btn_ok%%</a><a class="btn btn-outline-secondary" data-dismiss="modal" aria-hidden="true" id="data-confirm-cancel">%%btn_cancel%%</a></div></div></div></div>';
+			} else if (bootstrap_version == '3') {
 				template = '<div id="dataConfirmModal" class="modal fade" role="dialog" aria-labelledby="dataConfirmLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title">%%title%%</h4><button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button></div><div class="modal-body"><p>%%message%%</p></div><div class="modal-footer"><a class="btn btn-primary" href="%%btn_href%%" id="data-confirm-ok">%%btn_ok%%</a><a class="btn btn-default" data-dismiss="modal" aria-hidden="true" id="data-confirm-cancel">%%btn_cancel%%</a></div></div></div></div>';
 			} else {
 				template = '<div id="dataConfirmModal" class="modal fade" role="dialog" aria-labelledby="dataConfirmLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title">%%title%%</h4><button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">x</button></div><div class="modal-body"><p>%%message%%</p></div><div class="modal-footer"><a class="btn btn-primary" href="%%btn_href%%" id="data-confirm-ok">%%btn_ok%%</a><a class="btn btn-default" data-dismiss="modal" aria-hidden="true" id="data-confirm-cancel">%%btn_cancel%%</a></div></div></div></div>';
@@ -26,7 +28,7 @@ $(function ( $ ) {
 			if (typeof data.btn_ok !== 'undefined') {
 				template = template.replace('%%btn_ok%%', data.btn_ok);
 			} else {
-				template = template.replace('%%btn_ok%%', 'Ok');
+				template = template.replace('%%btn_ok%%', 'OK');
 			}
 			if (typeof data.btn_cancel !== 'undefined') {
 				template = template.replace('%%btn_cancel%%', data.btn_cancel);
