@@ -37,6 +37,8 @@ $(function ( $ ) {
 			}
 			if (typeof data.btn_href !== 'undefined') {
 				template = template.replace('%%btn_href%%', data.btn_href);
+			} else {
+				template = template.replace('%%btn_href%%', 'javascript:void(0)');
 			}
 
 		    ev.preventDefault();
