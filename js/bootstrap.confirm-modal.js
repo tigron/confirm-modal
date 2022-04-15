@@ -62,8 +62,12 @@ $(function ( $ ) {
 				$('body').on('click.confirm', '#dataConfirmModal #data-confirm-ok', function (e) {
 					e.preventDefault();
 					window[data.callback_ok].call(this);
-					$('body').unbind('click.confirm').unbind('click.cancel');
+					$('body').off('click.confirm', '#dataConfirmModal #data-confirm-ok').off('click.cancel', '#dataConfirmModal #data-confirm-cancel');
 					return false;
+				});
+			} else {
+				$('body').on('click.confirm', '#dataConfirmModal #data-confirm-ok', function (e) {
+					$('body').off('click.confirm', '#dataConfirmModal #data-confirm-ok').off('click.cancel', '#dataConfirmModal #data-confirm-cancel');
 				});
 			}
 
@@ -71,8 +75,12 @@ $(function ( $ ) {
 				$('body').on('click.cancel', '#dataConfirmModal #data-confirm-cancel', function (e) {
 					e.preventDefault();
 					window[data.callback_cancel].call(this);
-					$('body').unbind('click.confirm').unbind('click.cancel');
+					$('body').off('click.confirm', '#dataConfirmModal #data-confirm-ok').off('click.cancel', '#dataConfirmModal #data-confirm-cancel');
 					return false;
+				});
+			} else {
+				$('body').on('click.cancel', '#dataConfirmModal #data-confirm-cancel', function (e) {
+					$('body').off('click.confirm', '#dataConfirmModal #data-confirm-ok').off('click.cancel', '#dataConfirmModal #data-confirm-cancel');
 				});
 			}
 
