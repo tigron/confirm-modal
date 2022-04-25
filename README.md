@@ -28,3 +28,5 @@ The following attributes can be added to the link:
 	data-confirm-message: The message in the dialog
 	data-confirm-btn-ok: The caption of the OK button (default: Ok)
 	data-confirm-btn-cancel: The caption of the Cancel button (default: Cancel)
+	data-confirm-callback-ok: Optional callback to run when the OK button is clicked
+	data-confirm-callback-cancel: Optional callback to run when the Cancel button is clicked
