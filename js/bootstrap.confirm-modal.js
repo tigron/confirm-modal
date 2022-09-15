@@ -44,7 +44,7 @@ $(function ( $ ) {
 				template = template.replace('%%btn_href%%', 'javascript:void(0)');
 			}
 
-		    ev.preventDefault();
+		    	ev.preventDefault();
 
 			if (!$('#dataConfirmModal').length) {
 				$('body').append(template);
@@ -61,7 +61,7 @@ $(function ( $ ) {
 			if (data.callback_ok) {
 				$('body').on('click.confirm', '#dataConfirmModal #data-confirm-ok', function (e) {
 					e.preventDefault();
-					window[data.callback_ok].call(this);
+					window[data.callback_ok](this, ev);
 					$('body').off('click.confirm', '#dataConfirmModal #data-confirm-ok').off('click.cancel', '#dataConfirmModal #data-confirm-cancel');
 					return false;
 				});
@@ -74,7 +74,7 @@ $(function ( $ ) {
 			if (data.callback_cancel) {
 				$('body').on('click.cancel', '#dataConfirmModal #data-confirm-cancel', function (e) {
 					e.preventDefault();
-					window[data.callback_cancel].call(this);
+					window[data.callback_cancel](this, ev);
 					$('body').off('click.confirm', '#dataConfirmModal #data-confirm-ok').off('click.cancel', '#dataConfirmModal #data-confirm-cancel');
 					return false;
 				});
