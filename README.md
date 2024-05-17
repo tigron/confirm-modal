@@ -30,3 +30,7 @@ The following attributes can be added to the link:
 	data-confirm-btn-cancel: The caption of the Cancel button (default: Cancel)
 	data-confirm-callback-ok: Optional callback to run when the OK button is clicked
 	data-confirm-callback-cancel: Optional callback to run when the Cancel button is clicked
+
+## Bootstrap
+
+This plugin will create bootstrap confirmation modals. It support Bootstrap 3, Bootstrap 4 and Bootstrap5
